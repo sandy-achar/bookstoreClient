@@ -32,4 +32,19 @@ public class BookControllerMethods {
 
         }
     }
+
+    public void getBookByTitle(String title) {
+
+        String uri = "http://localhost:8084/book/title/" + title;
+        Book [] result = rest.getForObject(uri, Book[].class);
+        List <Book> books = Arrays.asList(result);
+
+        System.out.println("Search result for: " + title);
+
+        for (Book i: books) {
+
+            System.out.print(i);
+
+        }
+    }
 }

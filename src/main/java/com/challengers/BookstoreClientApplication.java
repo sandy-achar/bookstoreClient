@@ -32,8 +32,14 @@ public class BookstoreClientApplication {
         System.out.println(updateResult);
         */
 
-        //Check to get all books
+        //Check for book controller
         BookControllerMethods bookController = new BookControllerMethods();
+
+        //Check to get all books
         bookController.getAllBooks();
+
+        //Check to find book by title
+        bookController.getBookByTitle("NoSQL");
+
     }
 }
