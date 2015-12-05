@@ -10,30 +10,23 @@ public class BookstoreClientApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(BookstoreClientApplication.class, args);
+        UserControllerMethods userController = new UserControllerMethods();
 
-        //Check if the web service works properly
-        RestTemplate rest = new RestTemplate();
-        String uri, result;
+        //Checking login
+        System.out.println("Checking user Login.");
+        boolean loginResult = userController.userLogin("sandesh", "sandesh");
+        System.out.println(loginResult);
 
-        //Make an object for login to send to the service
-        System.out.println("Checking for login service.");
-        LoginUser login = new LoginUser("sandesh", "sandesh");
-        uri = "http://localhost:8084/user/login";
-        result = rest.postForObject(uri, login, String.class);
-        System.out.println(result);
-
-        //Check for user Register
-        /*System.out.println("Checking for user register service");
+        //Check user register
+        System.out.println("Checking user register.");
         User user = new User("hulk", "greenStuff", "Bruce", "M", "Banner", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
-        uri = "http://localhost:8084/user/registeruser";
-        result = rest.postForObject(uri, user, String.class);
-        System.out.println(result);*/
+        String registerResult = userController.userRegister(user);
+        System.out.println(registerResult);
 
-        //Check for user update
-        System.out.println("Checking for user user update service");
+        //Check user update
+        System.out.println("Checking user update.");
         User userUpdate = new User("hulk", "greenStuff", "Sandesh", "Sanjeev", "Achar", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
-        uri = "http://localhost:8084/user/updateuser/"+userUpdate.getUserName();
-        result = rest.postForObject(uri, userUpdate, String.class);
-        System.out.println(result);
+        String updateResult = userController.userUpdate(userUpdate);
+        System.out.println(updateResult);
     }
 }
