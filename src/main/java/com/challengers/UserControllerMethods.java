@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class UserControllerMethods {
 
+    //Attributes for this class
     RestTemplate rest = new RestTemplate();
 
     public UserControllerMethods() {}

@@ -10,6 +10,8 @@ public class BookstoreClientApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(BookstoreClientApplication.class, args);
+
+        /*
         UserControllerMethods userController = new UserControllerMethods();
 
         //Checking login
@@ -28,5 +30,10 @@ public class BookstoreClientApplication {
         User userUpdate = new User("hulk", "greenStuff", "Sandesh", "Sanjeev", "Achar", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
         String updateResult = userController.userUpdate(userUpdate);
         System.out.println(updateResult);
+        */
+
+        //Check to get all books
+        BookControllerMethods bookController = new BookControllerMethods();
+        bookController.getAllBooks();
     }
 }
