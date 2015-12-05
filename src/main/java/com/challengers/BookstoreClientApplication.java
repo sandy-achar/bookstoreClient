@@ -13,13 +13,20 @@ public class BookstoreClientApplication {
 
         //Check if the web service works properly
         RestTemplate rest = new RestTemplate();
+        String uri, result;
 
         //Make an object for login to send to the service
+        System.out.println("Checking for login service.");
         LoginUser login = new LoginUser("sandesh", "sandesh");
-        String uri = "http://localhost:8084/user/login";
+        uri = "http://localhost:8084/user/login";
+        result = rest.postForObject(uri, login, String.class);
+        System.out.println(result);
 
-        String result = rest.postForObject(uri, login, String.class);
-
+        //Check for user Register
+        System.out.println("Checking for user register service");
+        User user = new User("hulk", "greenStuff", "Bruce", "M", "Banner", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
+        uri = "http://localhost:8084/user/registeruser";
+        result = rest.postForObject(uri, user, String.class);
         System.out.println(result);
     }
 }
