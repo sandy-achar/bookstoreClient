@@ -41,5 +41,16 @@ public class BookstoreClientApplication {
         //Check to find book by title
         bookController.getBookByTitle("NoSQL");
 
+        //Check to find book by isbn
+        bookController.getBookByISBN("abc123456789");
+
+        //Check to find book by language
+        bookController.getBookBylanguage("English");
+
+        //Check to find books by author
+        bookController.getBookByAuthorName("John Benoit");
+
+        //Check to find books by publisher
+        bookController.getBookByPublisherName("abc publications");
     }
 }
