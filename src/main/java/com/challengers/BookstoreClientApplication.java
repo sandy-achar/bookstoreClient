@@ -23,10 +23,17 @@ public class BookstoreClientApplication {
         System.out.println(result);
 
         //Check for user Register
-        System.out.println("Checking for user register service");
+        /*System.out.println("Checking for user register service");
         User user = new User("hulk", "greenStuff", "Bruce", "M", "Banner", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
         uri = "http://localhost:8084/user/registeruser";
         result = rest.postForObject(uri, user, String.class);
+        System.out.println(result);*/
+
+        //Check for user update
+        System.out.println("Checking for user user update service");
+        User userUpdate = new User("hulk", "greenStuff", "Sandesh", "Sanjeev", "Achar", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
+        uri = "http://localhost:8084/user/updateuser/"+userUpdate.getUserName();
+        result = rest.postForObject(uri, userUpdate, String.class);
         System.out.println(result);
     }
 }
