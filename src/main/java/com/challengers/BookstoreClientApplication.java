@@ -2,7 +2,6 @@ package com.challengers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.client.RestTemplate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,15 +31,15 @@ public class BookstoreClientApplication {
         User userUpdate = new User("hulk", "greenStuff", "Sandesh", "Sanjeev", "Achar", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
         String updateResult = userController.userUpdate(userUpdate);
         System.out.println(updateResult);
-        */
 
 
         //Check for book controller
         BookControllerMethods bookController = new BookControllerMethods();
 
-        /*
+
         //Check to get all books
         bookController.getAllBooks();
+
 
         //Check to find book by title
         bookController.getBookByTitle("NoSQL");
@@ -57,6 +56,9 @@ public class BookstoreClientApplication {
         //Check to find books by publisher
         bookController.getBookByPublisherName("abc publications");
         */
+
+
+        BookControllerMethods bookController = new BookControllerMethods();
 
         /*
         //Check adding book

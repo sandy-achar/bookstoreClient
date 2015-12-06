@@ -25,7 +25,7 @@ public class Book {
     private int sold;
 
     //Constructor for books
-    //public Book() {}
+    public Book() {}
 
     public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold) {
         this.bookTitle = bookTitle;
