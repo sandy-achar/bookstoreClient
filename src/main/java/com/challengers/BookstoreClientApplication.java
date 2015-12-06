@@ -3,6 +3,8 @@ package com.challengers;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.client.RestTemplate;
+import java.util.HashSet;
+import java.util.Set;
 
 @SpringBootApplication
 public class BookstoreClientApplication {
@@ -32,9 +34,11 @@ public class BookstoreClientApplication {
         System.out.println(updateResult);
         */
 
+
         //Check for book controller
         BookControllerMethods bookController = new BookControllerMethods();
 
+        /*
         //Check to get all books
         bookController.getAllBooks();
 
@@ -52,5 +56,33 @@ public class BookstoreClientApplication {
 
         //Check to find books by publisher
         bookController.getBookByPublisherName("abc publications");
+        */
+
+        /*
+        //Check adding book
+        Set<String> authors = new HashSet<>();
+        authors.add("John Benoit");
+        authors.add("Tony Cole");
+        Set<String> publishers = new HashSet<>();
+        publishers.add("abc publications");
+
+        //An existing book
+        Book book = new Book("NoSQL", authors, publishers, 2004, "abc123456789", "English", 30.50, 5, 2);
+        bookController.addBook(book);
+
+        //New book
+        Book book1 = new Book("NoSQL", authors, publishers, 2004, "abc123456722", "English", 30.50, 5, 2);
+        bookController.addBook(book1);
+        */
+
+        //Checking updating book
+        Set<String> authors = new HashSet<>();
+        authors.add("Sandesh Sanjeev");
+        authors.add("Incredible Hulk");
+        Set<String> publishers = new HashSet<>();
+        publishers.add("abc publications");
+        Book book = new Book("NoSQL", authors, publishers, 2004, "abc123456722", "English", 30.50, 5, 2);
+        bookController.updateBook(book);
+
     }
 }

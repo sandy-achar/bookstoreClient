@@ -101,4 +101,20 @@ public class BookControllerMethods {
 
         }
     }
+
+    public void addBook(Book book) {
+
+        String uri = "http://localhost:8084/book/addbook";
+        String result = rest.postForObject(uri, book, String.class);
+        System.out.println(result);
+
+    }
+
+    public void updateBook(Book book) {
+
+        String uri = "http://localhost:8084/book/updatebook/" + book.getIsbn();
+        String result = rest.postForObject(uri, book, String.class);
+        System.out.println(result);
+
+    }
 }

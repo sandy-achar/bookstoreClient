@@ -6,7 +6,6 @@ package com.challengers;
  */
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import sun.rmi.runtime.Log;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LoginUser {

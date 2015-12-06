@@ -14,7 +14,6 @@ import java.util.Set;
 public class Book {
 
     //Attributes for the book
-    private Long bookId;
     private String bookTitle;
     private Set<String> authorNames = new HashSet<>();
     private Set<String> publisherNames = new HashSet<>();
@@ -26,21 +25,21 @@ public class Book {
     private int sold;
 
     //Constructor for books
-    public Book() {}
+    //public Book() {}
+
+    public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold) {
+        this.bookTitle = bookTitle;
+        this.authorNames = authorNames;
+        this.publisherNames = publisherNames;
+        this.publishedYear = publishedYear;
+        this.isbn = isbn;
+        this.language = language;
+        this.price = price;
+        this.quantity = quantity;
+        this.sold = sold;
+    }
 
     //Methods for the book controller
-    public Long getBookId() {
-
-        return bookId;
-
-    }
-
-    public void setBookId(Long bookId) {
-
-        this.bookId = bookId;
-
-    }
-
     public String getBookTitle() {
 
         return bookTitle;
@@ -179,7 +178,6 @@ public class Book {
 
         return "\n" +
                 "Book Title: " + bookTitle + "\n" +
-                "Book Id: " + bookId + "\n" +
                 "Author Names: " + authorNames(authorNames) + "\n" +
                 "Publisher Names: " + publisherNames(publisherNames) + "\n" +
                 "ISBN: " + isbn + "\n" +
