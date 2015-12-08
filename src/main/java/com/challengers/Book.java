@@ -14,6 +14,7 @@ import java.util.Set;
 public class Book {
 
     //Attributes for the book
+    private Long bookId;
     private String bookTitle;
     private Set<String> authorNames = new HashSet<>();
     private Set<String> publisherNames = new HashSet<>();
@@ -40,6 +41,16 @@ public class Book {
     }
 
     //Methods for the book controller
+
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
+
     public String getBookTitle() {
 
         return bookTitle;

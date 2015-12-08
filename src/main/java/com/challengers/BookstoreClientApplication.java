@@ -59,7 +59,7 @@ public class BookstoreClientApplication {
 
 
         BookControllerMethods bookController = new BookControllerMethods();
-
+//        bookController.getAllBooks();
         /*
         //Check adding book
         Set<String> authors = new HashSet<>();
@@ -84,7 +84,7 @@ public class BookstoreClientApplication {
         Set<String> publishers = new HashSet<>();
         publishers.add("abc publications");
         Book book = new Book("NoSQL", authors, publishers, 2004, "abc123456722", "English", 30.50, 5, 2);
-        bookController.updateBook(book);
+//        bookController.updateBook(book);
 
     }
 }

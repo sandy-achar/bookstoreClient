@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
-
+    private Long userId;
     //Login Stuff
     private String userName;
     private String password;
@@ -39,6 +39,14 @@ public class User {
         this.zipCode = zipCode;
         this.state = state;
         this.country = country;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     //Getter and Setter methods for the User
