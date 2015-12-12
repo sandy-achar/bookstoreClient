@@ -31,8 +31,9 @@ public class BookstoreClientApplication {
         User userUpdate = new User("hulk", "greenStuff", "Sandesh", "Sanjeev", "Achar", "410 Firwood Place", "Plano", "75075", "Texas", "United States");
         String updateResult = userController.userUpdate(userUpdate);
         System.out.println(updateResult);
+        */
 
-
+        /*
         //Check for book controller
         BookControllerMethods bookController = new BookControllerMethods();
 
@@ -57,10 +58,11 @@ public class BookstoreClientApplication {
         bookController.getBookByPublisherName("abc publications");
         */
 
-
+ /*
         BookControllerMethods bookController = new BookControllerMethods();
 //        bookController.getAllBooks();
-        /*
+
+
         //Check adding book
         Set<String> authors = new HashSet<>();
         authors.add("John Benoit");
@@ -77,6 +79,8 @@ public class BookstoreClientApplication {
         bookController.addBook(book1);
         */
 
+
+        /*
         //Checking updating book
         Set<String> authors = new HashSet<>();
         authors.add("Sandesh Sanjeev");
@@ -84,7 +88,38 @@ public class BookstoreClientApplication {
         Set<String> publishers = new HashSet<>();
         publishers.add("abc publications");
         Book book = new Book("NoSQL", authors, publishers, 2004, "abc123456722", "English", 30.50, 5, 2);
-//        bookController.updateBook(book);
+        String id = "1611759348201506408";
+        Long bookId = Long.parseLong(id);
+        bookController.updateBook(bookId, book);
+        */
 
+        /*
+        //Checking for transactions
+        TransactionControllerMathods transactionController = new TransactionControllerMathods();
+
+        String id = "2596880988704689669";
+        Long bookId1 = Long.parseLong(id);
+
+        id = "8123816692078955930";
+        Long bookId2 = Long.parseLong(id);
+
+        BookTransactionInfo bookTransactionInfo1 = new BookTransactionInfo(bookId1, 1);
+        BookTransactionInfo bookTransactionInfo2 = new BookTransactionInfo(bookId2, 1);
+
+        Set<BookTransactionInfo> bookTransactionInfo = new HashSet<>();
+        bookTransactionInfo.add(bookTransactionInfo1);
+        bookTransactionInfo.add(bookTransactionInfo2);
+
+        System.out.print(bookTransactionInfo);
+
+        id = "2837275520700924440";
+        Long userId = Long.parseLong(id);
+        String date = "2015-04-01";
+        Transaction transaction = new Transaction(userId, bookTransactionInfo);
+        System.out.print(transaction);
+
+        //transactionController.buyBook(transaction);
+        transactionController.getAllTransactions(userId);
+        transactionController.getTransactionByDate(userId, date);*/
     }
 }
