@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Register User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link th:href="@{/css/templatemo_style.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#username, #password').keyup(function() {
+                var userName = $('#username').val().trim();
+                var pwd = $('#password').val().trim();
+                if (userName.length == 0 || pwd.length == 0) {
+                    $('#loginButton').attr('disabled', 'disabled');
+                } else {
+                    $('#loginButton').removeAttr('disabled');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--<p th:text="'Hello, ' + ${book.bookTitle} + '!'">Welcome </p>
+<p th:text="'Hello, ' + ${book.isbn} + '!'">Welcome </p>-->
+
+
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+    <div id="templatemo_menu">
+        <ul>
+            <li><a href="index.html" class="current">Home</a></li>
+            <li><a href="subpage.html">Books</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div> <!-- end of menu -->
+
+    <div id="templatemo_header">
+
+    </div> <!-- end of header -->
+
+    <div id="templatemo_content">
+
+
+        <div id="templatemo_content_right" style="margin-right: 7em;">
+            <form method="post" th:action="@{/login}">
+                <div class="input-group">
+                    <h4 class="navbar-text" style="color:#cbc750">Please Sign In</h4></div><br/>
+                <label class="sr-only"> User Name : </label><input class="form-control" type="text"
+                                                                   id="username" name="username"
+                                                                   placeholder="User Name"/>
+                <label class="sr-only"> Password: </label><input class="form-control" type="password"
+                                                                 id="password" name="password"
+                                                                 placeholder="Password"/><br/>
+                <input id="loginButton" style="margin-top:3.2em; width:45%" class="btn btn-lg btn-primary" type="submit" value="Sign In" disabled="disabled"/>
+                <a th:href="@{/showregisterform}"><input id="registerButton" style="margin-top:3.2em; margin-left:2em; width:45%" class="btn btn-lg btn-primary" type="button" value="Sign Up" /></a>
+                <br/>
+                <div class="alert alert-danger alert-dismissible" role="alert" th:if="${param.error}">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Invalid Username/Password.
+                </div>
+                <div class="alert alert-success alert-dismissible" role="alert" th:if="${param.logout}">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    You have logged out successfully.
+                </div>
+            </form>
+        </div> <!-- end of content right -->
+
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+        <a href="subpage.html">Home</a> | <a href="subpage.html">Books</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
+        <!-- Credit: www.templatemo.com -->	</div>
+    <!-- end of footer -->
+    <!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.challengers;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Array;
@@ -12,32 +13,29 @@ import java.util.List;
  * Function to be run for book services
  */
 
+@Component
 public class BookControllerMethods {
 
     //Attributes for this class
     RestTemplate rest = new RestTemplate();
 
-    String baseUrl = "http://localhost:8084/";
+    String baseUrl = "http://localhost:8084/book/";
 
     //Class constructor
     public BookControllerMethods() {}
 
     //Methods
-    public void getAllBooks() {
-        String uri = baseUrl + "book/getbooks";
+    public List<Book> getAllBooks() {
+        String uri = baseUrl + "getbooks";
         Book[] result = rest.getForObject(uri, Book[].class);
         List<Book> books = Arrays.asList(result);
 
-        for (Book i: books) {
-
-            System.out.print(i);
-
-        }
+        return books;
     }
 
     public void getBookByTitle(String title) {
 
-        String uri = baseUrl + "book/title/" + title;
+        String uri = baseUrl + "title/" + title;
         Book [] result = rest.getForObject(uri, Book[].class);
         List <Book> books = Arrays.asList(result);
 
@@ -52,7 +50,7 @@ public class BookControllerMethods {
 
     public void getBookByAuthorName(String author) {
 
-        String uri = baseUrl + "book/author/" + author;
+        String uri = baseUrl + "author/" + author;
         Book [] result = rest.getForObject(uri, Book[].class);
         List <Book> books = Arrays.asList(result);
 
@@ -67,7 +65,7 @@ public class BookControllerMethods {
 
     public void getBookByPublisherName(String publisher) {
 
-        String uri = baseUrl + "book/publisher/" + publisher;
+        String uri = baseUrl + "publisher/" + publisher;
         Book [] result = rest.getForObject(uri, Book[].class);
         List <Book> books = Arrays.asList(result);
 
@@ -82,7 +80,7 @@ public class BookControllerMethods {
 
     public void getBookByISBN(String isbn) {
 
-        String uri = baseUrl + "book/isbn/" + isbn;
+        String uri = baseUrl + "isbn/" + isbn;
         Book book = rest.getForObject(uri, Book.class);
 
         System.out.println("\nSearch result for: " + isbn);
@@ -91,7 +89,7 @@ public class BookControllerMethods {
 
     public void getBookBylanguage(String language) {
 
-        String uri = baseUrl + "book/language/" + language;
+        String uri = baseUrl + "language/" + language;
         Book [] result = rest.getForObject(uri, Book[].class);
         List <Book> books = Arrays.asList(result);
 
@@ -106,7 +104,7 @@ public class BookControllerMethods {
 
     public void addBook(Book book) {
 
-        String uri = baseUrl + "book/addbook";
+        String uri = baseUrl + "addbook";
         String result = rest.postForObject(uri, book, String.class);
         System.out.println(result);
 
@@ -114,7 +112,7 @@ public class BookControllerMethods {
 
     public void updateBook(Long bookId, Book book) {
 
-        String uri = baseUrl + "book/updatebook/" + bookId;
+        String uri = baseUrl + "updatebook/" + bookId;
         String result = rest.postForObject(uri, book, String.class);
         System.out.println(result);
 
