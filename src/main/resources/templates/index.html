@@ -15,13 +15,13 @@
 </head>
 <body>
 <!--  Free CSS Templates from www.templatemo.com -->
-<div id="templatemo_container">
+<div id="templatemo_container" style="width:980px">
     <div id="templatemo_menu">
         <ul>
             <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="subpage.html">Books</a></li>
             <li><a href="subpage.html">Profile</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#">Log Out</a></li>
         </ul>
     </div>
     <!-- end of menu -->
@@ -32,144 +32,68 @@
     <!-- end of header -->
 
     <div id="templatemo_content">
-
-        <div id="templatemo_content_left">
-            <div class="templatemo_content_left_section">
-                <h1>Bestsellers</h1>
-                <ul>
-                    <li><a href="#">Vestibulum ullamcorper</a></li>
-                    <li><a href="#">Maece nas metus</a></li>
-                    <li><a href="#">In sed risus ac feli</a></li>
-                    <li><a href="#">Praesent mattis varius</a></li>
-                    <li><a href="#">Maece nas metus</a></li>
-                    <li><a href="#">In sed risus ac feli</a></li>
-                    <li><a href="#">Flash Templates</a></li>
-                    <li><a href="#">CSS Templates</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="http://www.photovaco.com" target="_parent">Free Photos</a></li>
-                </ul>
-            </div>
-            <div class="templatemo_content_left_section">
-                <h1>Bestsellers</h1>
-                <ul>
-                    <li><a href="#">Vestibulum ullamcorper</a></li>
-                    <li><a href="#">Maece nas metus</a></li>
-                    <li><a href="#">In sed risus ac feli</a></li>
-                    <li><a href="#">Praesent mattis varius</a></li>
-                    <li><a href="#">Maece nas metus</a></li>
-                    <li><a href="#">In sed risus ac feli</a></li>
-                    <li><a href="#">Flash Templates</a></li>
-                    <li><a href="#">CSS Templates</a></li>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="http://www.photovaco.com" target="_parent">Free Photos</a></li>
-                </ul>
-            </div>
-</div>
-        <!-- end of content left -->
-
-        <div id="templatemo_content_right">
-            <div class="templatemo_product_box" style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
-                <h1 th:text="${book.bookTitle}"/>
-                <div style="float:left; width:25%">
-                    <img th:src="'images/' + ${book.image}" alt="image"/>
-                    <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
+        <div id="templatemo_content_right" style="margin-right: 7em;">
+                <div class="col-lg-6" style="width:100%">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <select style="margin-right: 0px; height:34px" class="btn btn-default">
+                                <option value="bookName">Book Name</option>
+                                <option value="authorName">Author Name</option>
+                                <option value="publisherName">Publisher Name</option>
+                                <option value="isbn">ISBN</option>
+                                <option value="language">Language</option>
+                            </select>
+                        </div>
+                        <!-- /btn-group -->
+                        <input type="text" class="form-control" aria-label="..."/>
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                    <!-- /input-group -->
                 </div>
-                <div style="float:right; color:white; width:60%; margin-left:10%">
-                    <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
-                    <p th:text="'ISBN : ' + ${book.isbn}"/>
-                    <h3 th:text="'Price : $' + ${book.price}"/>
+                <!-- /.col-lg-6 -->
+
+                <div class="templatemo_product_box"
+                     style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
+                    <h1 th:text="${book.bookTitle}"/>
+
+                    <div style="float:left; width:25%">
+                        <img th:src="'images/' + ${book.image}" alt="image"/>
+                        <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
+                    </div>
+                    <div style="float:right; color:white; width:60%; margin-left:10%">
+                        <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
+
+                        <p th:text="'ISBN : ' + ${book.isbn}"/>
+
+                        <h3 th:text="'Price : $' + ${book.price}"/>
+
+                        <div class="buy_now_button"><a href="subpage.html">Add to Cart</a></div>
+                    </div>
                 </div>
             </div>
-
-           <!-- <div class="templatemo_product_box" th:each="book : ${books}">
-                <h1 th:text="${book.bookTitle}"/>
-                <img src="images/templatemo_image_01.jpg" alt="image"/>
-
-                <div class="product_info">
-                    &lt;!&ndash;<p th:text="${book.authorNames}"/>&ndash;&gt;
-                    <p th:text="${book.isbn}"/>
-
-                    <h3 th:text="${book.price}"/>
-
-                    <div class="buy_now_button"><a href="subpage.html">Add to Cart</a></div>
-                </div>
-                <div class="cleaner">&nbsp;</div>
-                <div class="cleaner_with_width">&nbsp;</div>
-            </div>
--->
-
-            <!--<div class="templatemo_product_box">
-                <h1>Cooking <span>(by New Author)</span></h1>
-                <img src="images/templatemo_image_02.jpg" alt="image"/>
-
-                <div class="product_info">
-                    <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
-
-                    <h3>$35</h3>
-
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
-                </div>
-                <div class="cleaner">&nbsp;</div>
-            </div>
+            <!-- end of content right -->
 
             <div class="cleaner_with_height">&nbsp;</div>
-
-            <div class="templatemo_product_box">
-                <h1>Gardening <span>(by Famous Author)</span></h1>
-                <img src="images/templatemo_image_03.jpg" alt="image"/>
-
-                <div class="product_info">
-                    <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
-
-                    <h3>$65</h3>
-
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
-                </div>
-                <div class="cleaner">&nbsp;</div>
-            </div>
-
-            <div class="cleaner_with_width">&nbsp;</div>
-
-            <div class="templatemo_product_box">
-                <h1>Sushi Book <span>(by Japanese Name)</span></h1>
-                <img src="images/templatemo_image_04.jpg" alt="image"/>
-
-                <div class="product_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                    <h3>$45</h3>
-
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
-                </div>
-                <div class="cleaner">&nbsp;</div>
-            </div>
-
-            <div class="cleaner_with_height">&nbsp;</div>
--->
         </div>
-        <!-- end of content right -->
+        <!-- end of content -->
 
-        <div class="cleaner_with_height">&nbsp;</div>
+        <div id="templatemo_footer">
+
+            <a href="subpage.html">Home</a> | <a href="subpage.html">Profile</a> | <a
+                href="#">Contact Us</a><br/>
+            Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
+
+            <!-- Credit: www.templatemo.com -->    </div>
+        <!-- end of footer -->
+        <!--  Free CSS Template www.templatemo.com -->
     </div>
-    <!-- end of content -->
-
-    <div id="templatemo_footer">
-
-        <a href="subpage.html">Home</a> | <a href="subpage.html">Books</a> |<a href="subpage.html">Books</a> | <a href="#">Contact Us</a><br/>
-        Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
-
-        <!-- Credit: www.templatemo.com -->    </div>
-    <!-- end of footer -->
-    <!--  Free CSS Template www.templatemo.com -->
-</div>
-<!-- end of container -->
-<!-- templatemo 086 book store -->
-<!-- 
-Book Store Template 
-http://www.templatemo.com/preview/templatemo_086_book_store 
--->
+    <!-- end of container -->
+    <!-- templatemo 086 book store -->
+    <!--
+    Book Store Template
+    http://www.templatemo.com/preview/templatemo_086_book_store
+    -->
 </body>
 </html>

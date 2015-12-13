@@ -27,9 +27,10 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String display(@ModelAttribute User user, Model model){
+    public String register(@ModelAttribute User user, Model model){
         String result = userControllerMethods.userRegister(user);
         model.addAttribute("result", result);
+        model.addAttribute("user", new User());
         return "customerregister";
     }
 }

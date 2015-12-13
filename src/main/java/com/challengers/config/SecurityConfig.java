@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","/showregisterform", "/webjars/**").permitAll()
+                .antMatchers("/showregisterform", "/register", "/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -35,9 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        Md5PasswordEncoder md5PasswordEncoder = new Md5PasswordEncoder();
-//        auth.userDetailsService(userLoginService).passwordEncoder(md5PasswordEncoder);
-        auth.userDetailsService(userLoginService);
+        Md5PasswordEncoder md5PasswordEncoder = new Md5PasswordEncoder();
+        auth.userDetailsService(userLoginService).passwordEncoder(md5PasswordEncoder);
+//        auth.userDetailsService(userLoginService);
 /*
         auth
                 .inMemoryAuthentication()

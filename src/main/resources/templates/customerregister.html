@@ -19,11 +19,10 @@
 
 
 <!--  Free CSS Templates from www.templatemo.com -->
-<div id="templatemo_container">
+<div id="templatemo_container" style="width:980px">
     <div id="templatemo_menu">
         <ul>
             <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="subpage.html">Books</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div> <!-- end of menu -->
@@ -41,19 +40,19 @@
                     <h4 class="navbar-text" style="color:#cbc750">Register New User</h4></div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="userName">User Name</span>
-                    <input type="text" class="form-control" placeholder="Enter Username" aria-describedby="userName" th:field="*{userName}"/>
+                    <input type="text" class="form-control" placeholder="Enter Username" required="required" aria-describedby="userName" th:field="*{userName}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="password">Password</span>
-                    <input type="password" class="form-control" placeholder="Enter Password" aria-describedby="password" th:field="*{password}"/>
+                    <input type="password" class="form-control" placeholder="Enter Password" required="required" aria-describedby="password" th:field="*{password}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="firstName">First Name</span>
-                    <input type="text" class="form-control" placeholder="Enter First Name" aria-describedby="firstName" th:field="*{firstName}"/>
+                    <input type="text" class="form-control" placeholder="Enter First Name" required="required" aria-describedby="firstName" th:field="*{firstName}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="lastName">Last Name</span>
-                    <input type="text" class="form-control" placeholder="Enter Last Name" aria-describedby="lastName" th:field="*{lastName}"/>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" required="required" aria-describedby="lastName" th:field="*{lastName}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="middleName">Middle Name</span>
@@ -61,30 +60,30 @@
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="email">Email</span>
-                    <input type="email" class="form-control" placeholder="Enter Email" aria-describedby="email" th:field="*{email}"/>
+                    <input type="email" class="form-control" placeholder="Enter Email" required="required" aria-describedby="email" th:field="*{email}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="street">Street</span>
-                    <input type="text" class="form-control" placeholder="Enter Street" aria-describedby="street" th:field="*{street}"/>
+                    <input type="text" class="form-control" placeholder="Enter Street" required="required" aria-describedby="street" th:field="*{street}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="city">City</span>
-                    <input type="text" class="form-control" placeholder="Enter City" aria-describedby="city" th:field="*{city}"/>
+                    <input type="text" class="form-control" placeholder="Enter City" required="required" aria-describedby="city" th:field="*{city}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="zipCode">Zip Code</span>
-                    <input type="text" class="form-control" placeholder="Enter Zip Code" aria-describedby="zipCode" th:field="*{zipCode}"/>
+                    <input type="text" class="form-control" placeholder="Enter Zip Code" required="required" aria-describedby="zipCode" th:field="*{zipCode}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="state">State</span>
-                    <input type="text" class="form-control" placeholder="Enter State" aria-describedby="state" th:field="*{state}"/>
+                    <input type="text" class="form-control" placeholder="Enter State" required="required" aria-describedby="state" th:field="*{state}"/>
                 </div><br/>
                 <div class="input-group">
                     <span class="input-group-addon" id="country">Country</span>
-                    <input type="text" class="form-control" placeholder="Enter Country" aria-describedby="country" th:field="*{country}"/>
+                    <input type="text" class="form-control" placeholder="Enter Country" required="required" aria-describedby="country" th:field="*{country}"/>
                 </div><br/>
                 <div class="input-group" style="color:white;">
-                    <input type="radio" name="userRole" checked="checked" value="Buyer" th:field="*{role}"/>Buyer
+                    <input type="radio" name="userRole" checked="" value="Buyer" th:field="*{role}"/>Buyer
                     <input style="margin-left:2em" type="radio" name="userRole" value="Seller" th:field="*{role}"/>Seller
                 </div>
                 <br/>
@@ -99,7 +98,7 @@
 
     <div id="templatemo_footer">
 
-        <a href="subpage.html">Home</a> | <a href="subpage.html">Books</a> | <a href="#">Contact Us</a><br />
+        <a href="subpage.html">Home</a> | <a href="#">Contact Us</a><br />
         Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
         <!-- Credit: www.templatemo.com -->	</div>
     <!-- end of footer -->

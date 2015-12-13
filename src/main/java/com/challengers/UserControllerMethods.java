@@ -1,5 +1,7 @@
 package com.challengers;
 
+import org.apache.tomcat.util.security.MD5Encoder;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,6 +43,7 @@ public class UserControllerMethods {
     }
 
     public String userRegister(User user) {
+        user.setPassword(new Md5PasswordEncoder().encodePassword(user.getPassword(), null));
 
         String uri = baseUrl +"registeruser";
         String result = rest.postForObject(uri, user, String.class);
