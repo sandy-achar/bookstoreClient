@@ -25,9 +25,14 @@ public class User {
     private String zipCode;
     private String state;
     private String country;
+    private String email;
+    private String role;
+
+    public User() {
+    }
 
     //Constructor to init the User object
-    public User(String userName, String password, String firstName, String middleName, String lastName, String street, String city, String zipCode, String state, String country) {
+    public User(String userName, String password, String firstName, String middleName, String lastName, String street, String city, String zipCode, String state, String country, String email, String role) {
 
         this.userName = userName;
         this.password = password;
@@ -39,8 +44,9 @@ public class User {
         this.zipCode = zipCode;
         this.state = state;
         this.country = country;
+        this.email = email;
+        this.role = role;
     }
-
     public Long getUserId() {
         return userId;
     }
@@ -169,5 +175,21 @@ public class User {
 
         this.country = country;
 
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

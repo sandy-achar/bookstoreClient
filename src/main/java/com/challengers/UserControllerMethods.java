@@ -1,5 +1,6 @@
 package com.challengers;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
  * Function to be run for specific user services
  */
 
+@Component
 public class UserControllerMethods {
 
     //Attributes for this class
