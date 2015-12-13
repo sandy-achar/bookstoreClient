@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="ce772193-c593-4680-94e2-3f44a69c2cc4" name="Default" comment="" />
-    <list default="true" id="bcd399b3-c2e9-4fa0-bd72-1e5874043e04" name="Register User using form" comment="Updated Home page to get images from database">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/challengers/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/challengers/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/challengers/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/challengers/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/challengers/UserControllerMethods.java" afterPath="$PROJECT_DIR$/src/main/java/com/challengers/UserControllerMethods.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+    <list id="ce772193-c593-4680-94e2-3f44a69c2cc4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/challengers/controller/RegisterController.class" afterPath="$PROJECT_DIR$/target/classes/com/challengers/controller/RegisterController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/challengers/UserControllerMethods.class" afterPath="$PROJECT_DIR$/target/classes/com/challengers/UserControllerMethods.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/customerregister.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/customerregister.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/customerregister.html" afterPath="$PROJECT_DIR$/target/classes/templates/customerregister.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list default="true" id="bcd399b3-c2e9-4fa0-bd72-1e5874043e04" name="Register User using form" comment="Updated html pages' style &#10;Added encryption to password while saving user data&#10;Modifications in register user page" />
     <ignored path="bookstoreClient.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.4">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="34" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -73,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customerregister.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="customerregister.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customerregister.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="85" column="65" selection-start-line="85" selection-start-column="65" selection-end-line="85" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.72649574">
+              <caret line="85" column="74" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -200,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/challengers/UserControllerMethods.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/challengers/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/customerregister.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/customerregister.html" />
       </list>
     </option>
   </component>
@@ -681,7 +678,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450033412213</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated html pages' style &#10;Added encryption to password while saving user data&#10;Modifications in register user page">
+      <created>1450039449204</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1450039449204</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -695,7 +698,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.90102386" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5085324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6040956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -754,7 +757,8 @@
     <MESSAGE value="Added Login with encryption/decryption&#10;Added home page" />
     <MESSAGE value="Updated Home page" />
     <MESSAGE value="Updated Home page to get images from database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Home page to get images from database" />
+    <MESSAGE value="Updated html pages' style &#10;Added encryption to password while saving user data&#10;Modifications in register user page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated html pages' style &#10;Added encryption to password while saving user data&#10;Modifications in register user page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,21 +1164,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customerregister.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="85" column="65" selection-start-line="85" selection-start-column="65" selection-end-line="85" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/challengers/controller/RegisterController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customerregister.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.4">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="34" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.72649574">
+          <caret line="85" column="74" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
