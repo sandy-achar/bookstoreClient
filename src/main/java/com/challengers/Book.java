@@ -24,11 +24,12 @@ public class Book {
     private double price;
     private int quantity;
     private int sold;
+    private String image;
 
     //Constructor for books
     public Book() {}
 
-    public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold) {
+    public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold, String image) {
         this.bookTitle = bookTitle;
         this.authorNames = authorNames;
         this.publisherNames = publisherNames;
@@ -38,6 +39,7 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
         this.sold = sold;
+        this.image = image;
     }
 
     //Methods for the book controller
@@ -188,17 +190,28 @@ public class Book {
         return String.join(", ", authorNames);
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
-
-        return "\n" +
-                "Book Title: " + bookTitle + "\n" +
-                "Author Names: " + authorNames(authorNames) + "\n" +
-                "Publisher Names: " + publisherNames(publisherNames) + "\n" +
-                "ISBN: " + isbn + "\n" +
-                "Language: " + language + "\n" +
-                "Price: " + price + "\n" +
-                "Quantity: " + quantity + "\n" +
-                "Sold: " + sold + "\n";
+        return "Book{" +
+                "bookId=" + bookId +
+                ", bookTitle='" + bookTitle + '\'' +
+                ", authorNames=" + authorNames +
+                ", publisherNames=" + publisherNames +
+                ", publishedYear=" + publishedYear +
+                ", isbn='" + isbn + '\'' +
+                ", language='" + language + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", sold=" + sold +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

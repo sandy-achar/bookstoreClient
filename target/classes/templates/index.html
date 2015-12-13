@@ -68,13 +68,25 @@
         <!-- end of content left -->
 
         <div id="templatemo_content_right">
+            <div class="templatemo_product_box" style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
+                <h1 th:text="${book.bookTitle}"/>
+                <div style="float:left; width:25%">
+                    <img th:src="'images/' + ${book.image}" alt="image"/>
+                    <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
+                </div>
+                <div style="float:right; color:white; width:60%; margin-left:10%">
+                    <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
+                    <p th:text="'ISBN : ' + ${book.isbn}"/>
+                    <h3 th:text="'Price : $' + ${book.price}"/>
+                </div>
+            </div>
 
-            <div class="templatemo_product_box" th:each="book : ${books}">
+           <!-- <div class="templatemo_product_box" th:each="book : ${books}">
                 <h1 th:text="${book.bookTitle}"/>
                 <img src="images/templatemo_image_01.jpg" alt="image"/>
 
                 <div class="product_info">
-                    <!--<p th:text="${book.authorNames}"/>-->
+                    &lt;!&ndash;<p th:text="${book.authorNames}"/>&ndash;&gt;
                     <p th:text="${book.isbn}"/>
 
                     <h3 th:text="${book.price}"/>
@@ -84,7 +96,7 @@
                 <div class="cleaner">&nbsp;</div>
                 <div class="cleaner_with_width">&nbsp;</div>
             </div>
-
+-->
 
             <!--<div class="templatemo_product_box">
                 <h1>Cooking <span>(by New Author)</span></h1>
@@ -137,7 +149,6 @@
 
             <div class="cleaner_with_height">&nbsp;</div>
 -->
-            <a href="subpage.html"><img src="images/templatemo_ads.jpg" alt="ads"/></a>
         </div>
         <!-- end of content right -->
 

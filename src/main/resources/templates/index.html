@@ -71,7 +71,8 @@
             <div class="templatemo_product_box" style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
                 <h1 th:text="${book.bookTitle}"/>
                 <div style="float:left; width:25%">
-                    <img src="images/templatemo_image_01.jpg" alt="image"/>
+                    <img th:src="'images/' + ${book.image}" alt="image"/>
+                    <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
                 </div>
                 <div style="float:right; color:white; width:60%; margin-left:10%">
                     <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
