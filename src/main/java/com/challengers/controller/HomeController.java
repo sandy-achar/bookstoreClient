@@ -28,7 +28,7 @@ public class HomeController {
 
         List<Book> filteredBooks = allBooks.stream()
                 .filter(book -> book.getQuantity() > book.getSold())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()).subList(0,4);
 
 
         model.addAttribute("books", filteredBooks);

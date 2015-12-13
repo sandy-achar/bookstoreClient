@@ -184,6 +184,10 @@ public class Book {
         return result;
     }
 
+    public String getFormattedAuthors(){
+        return String.join(", ", authorNames);
+    }
+
     @Override
     public String toString() {
 
