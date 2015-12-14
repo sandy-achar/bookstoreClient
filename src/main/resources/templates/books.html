@@ -18,8 +18,8 @@
 <div id="templatemo_container" style="width:980px">
     <div id="templatemo_menu">
         <ul>
-            <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="subpage.html">Profile</a></li>
+            <li><a th:href="@{/books}" class="current">Home</a></li>
+            <li><a th:href="@{/profile}">Profile</a></li>
             <li><a href="#">Contact</a></li>
             <li title="Log Out">
                 <form th:action="@{/logout}" method="post">
@@ -37,27 +37,28 @@
 
     <div id="templatemo_content">
         <div id="templatemo_content_right" style="margin-right: 7em;">
+            <form method="get" action="/books">
                 <div class="col-lg-6" style="width:100%">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <select style="margin-right: 0px; height:34px" class="btn btn-default">
-                                <option value="bookName">Book Name</option>
-                                <option value="authorName">Author Name</option>
-                                <option value="publisherName">Publisher Name</option>
+                            <select style="margin-right: 0px; height:34px" class="btn btn-default" id="category" name="category" th:value="${category}">
+                                <option value="title">Book Name</option>
+                                <option value="author">Author Name</option>
+                                <option value="publisher">Publisher Name</option>
                                 <option value="isbn">ISBN</option>
                                 <option value="language">Language</option>
                             </select>
                         </div>
                         <!-- /btn-group -->
-                        <input type="text" class="form-control" aria-label="..."/>
+                        <input id="query" name="query" type="text" class="form-control" aria-label="..." th:value="${query}"/>
                         <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
+                        <button class="btn btn-default" type="submit">Go!</button>
                         </span>
                     </div>
                     <!-- /input-group -->
                 </div>
                 <!-- /.col-lg-6 -->
-
+            </form>
                 <div class="templatemo_product_box"
                      style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
                     <h1 th:text="${book.bookTitle}"/>

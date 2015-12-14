@@ -33,22 +33,14 @@ public class BookControllerMethods {
         return books;
     }
 
-    public void getBookByTitle(String title) {
+    public List<Book> getBooksBy(String category, String query) {
 
-        String uri = baseUrl + "title/" + title;
+        String uri = baseUrl + category + "/" + query;
         Book [] result = rest.getForObject(uri, Book[].class);
-        List <Book> books = Arrays.asList(result);
-
-        System.out.println("\nSearch result for: " + title);
-
-        for (Book i: books) {
-
-            System.out.print(i);
-
-        }
+        return Arrays.asList(result);
     }
 
-    public void getBookByAuthorName(String author) {
+    /*public void getBookByAuthorName(String author) {
 
         String uri = baseUrl + "author/" + author;
         Book [] result = rest.getForObject(uri, Book[].class);
@@ -76,7 +68,7 @@ public class BookControllerMethods {
             System.out.print(i);
 
         }
-    }
+    }*/
 
     public Book getBookByISBN(String isbn) {
 
@@ -86,7 +78,7 @@ public class BookControllerMethods {
         return book;
     }
 
-    public void getBookBylanguage(String language) {
+    /*public void getBookBylanguage(String language) {
 
         String uri = baseUrl + "language/" + language;
         Book [] result = rest.getForObject(uri, Book[].class);
@@ -99,7 +91,7 @@ public class BookControllerMethods {
             System.out.print(i);
 
         }
-    }
+    }*/
 
     public void addBook(Book book) {
 

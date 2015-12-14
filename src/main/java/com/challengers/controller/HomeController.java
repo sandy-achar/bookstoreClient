@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -23,15 +26,43 @@ public class HomeController {
     private BookControllerMethods bookControllerMethods;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model){
-        List<Book> allBooks = bookControllerMethods.getAllBooks();
+    public String home(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model){
 
-        List<Book> filteredBooks = allBooks.stream()
+        List<Book> books = bookControllerMethods.getAllBooks();
+        List<Book> filteredBooks = books.stream()
+                .filter(book -> book.getQuantity() > book.getSold())
+                .collect(Collectors.toList());
+        model.addAttribute("books", filteredBooks);
+        return "books";
+    }
+
+    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    public String books(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model){
+
+        List<Book> books = new ArrayList<>();
+        if(category != null && query != null){
+            if (category.equals("isbn")) {
+                Book bookByISBN = bookControllerMethods.getBookByISBN(query);
+                if (bookByISBN != null) {
+                    books = Collections.singletonList(bookByISBN);
+                }
+            } else {
+                books = bookControllerMethods.getBooksBy(category, query);
+            }
+
+        } else {
+           books = bookControllerMethods.getAllBooks();
+        }
+
+        List<Book> filteredBooks = books.stream()
                 .filter(book -> book.getQuantity() > book.getSold())
                 .collect(Collectors.toList());
 
 
         model.addAttribute("books", filteredBooks);
+
+        model.addAttribute("category", category);
+        model.addAttribute("query", query);
         return "index";
     }
 
