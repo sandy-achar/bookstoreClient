@@ -6,3 +6,15 @@
     background: url(../images/button.png) repeat;
 }
 
+#templatemo_content_right p {
+    text-align: center;
+    padding: 5px 0 8px 0;
+}
+
+.input-group-addon {
+    width:20%;
+}
+
+.input-group {
+        width:100%
+}

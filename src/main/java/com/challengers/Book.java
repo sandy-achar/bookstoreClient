@@ -25,11 +25,12 @@ public class Book {
     private int quantity;
     private int sold;
     private String image;
+    private Long userId;
 
     //Constructor for books
     public Book() {}
 
-    public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold, String image) {
+    public Book(String bookTitle, Set<String> authorNames, Set<String> publisherNames, int publishedYear, String isbn, String language, double price, int quantity, int sold, String image, Long userId) {
         this.bookTitle = bookTitle;
         this.authorNames = authorNames;
         this.publisherNames = publisherNames;
@@ -40,6 +41,7 @@ public class Book {
         this.quantity = quantity;
         this.sold = sold;
         this.image = image;
+        this.userId = userId;
     }
 
     //Methods for the book controller
@@ -198,6 +200,14 @@ public class Book {
         this.image = image;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -212,6 +222,7 @@ public class Book {
                 ", quantity=" + quantity +
                 ", sold=" + sold +
                 ", image='" + image + '\'' +
+                ", userId=" + userId +
                 '}';
     }
 }

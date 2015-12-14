@@ -30,9 +30,9 @@
 <div id="templatemo_container" style="width:980px">
     <div id="templatemo_menu">
         <ul>
-            <li><a th:href="@{/books}" class="current">Home</a></li>
-            <li><a th:href="@{/profile}">Profile</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a th:href="@{/books}">Home</a></li>
+            <li><a th:href="@{/profile}" class="current">Profile</a></li>
+            <li><a th:href="@{/contactus}">Contact</a></li>
             <li title="Log Out">
                 <form th:action="@{/logout}" method="post">
                     <button type="submit" style="padding: 0 20px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; color: #969547; background-color: transparent; border:none">Log Out</button>
@@ -49,7 +49,7 @@
 
 
         <div id="templatemo_content_right" style="margin-right: 7em;">
-                <div class="input-group">
+            <div class="input-group">
                     <span class="input-group-addon" id="userNameLabel">User Name</span>
                     <p id="userName" class="form-control-static detail" th:text="${user.userName}"></p>
                 </div><br/>
@@ -88,8 +88,8 @@
                 <div class="input-group">
                     <span class="input-group-addon" id="countryLabel">Country</span>
                     <p id="country" class="form-control-static detail" th:text="${user.country}"></p>
-                </div>
-
+                </div><br/>
+            <a th:href="@{/updateuser}"><button type="button" style="margin-left:17em" class="btn btn-default navbar-btn">Update</button></a>
         </div> <!-- end of content right -->
 
         <div class="cleaner_with_height">&nbsp;</div>
