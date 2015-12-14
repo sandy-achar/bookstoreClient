@@ -78,13 +78,12 @@ public class BookControllerMethods {
         }
     }
 
-    public void getBookByISBN(String isbn) {
+    public Book getBookByISBN(String isbn) {
 
         String uri = baseUrl + "isbn/" + isbn;
         Book book = rest.getForObject(uri, Book.class);
 
-        System.out.println("\nSearch result for: " + isbn);
-        System.out.println(book);
+        return book;
     }
 
     public void getBookBylanguage(String language) {
