@@ -19,7 +19,7 @@ public class BookControllerMethods {
     //Attributes for this class
     RestTemplate rest = new RestTemplate();
 
-    String baseUrl = "http://localhost:8084/book/";
+    String baseUrl = "https://localhost:8084/book/";
 
     //Class constructor
     public BookControllerMethods() {}
@@ -28,9 +28,8 @@ public class BookControllerMethods {
     public List<Book> getAllBooks() {
         String uri = baseUrl + "getbooks";
         Book[] result = rest.getForObject(uri, Book[].class);
-        List<Book> books = Arrays.asList(result);
 
-        return books;
+        return Arrays.asList(result);
     }
 
     public List<Book> getBooksBy(String category, String query) {

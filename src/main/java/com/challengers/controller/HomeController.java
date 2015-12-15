@@ -63,7 +63,7 @@ public class HomeController {
 
         model.addAttribute("category", category);
         model.addAttribute("query", query);
-        return "index";
+        return "books";
     }
 
     @RequestMapping("/login")

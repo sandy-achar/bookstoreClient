@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class UserControllerMethods {
 
-    private String baseUrl = "http://localhost:8084/user/";
+    private String baseUrl = "https://localhost:8084/user/";
     //Attributes for this class
     RestTemplate rest = new RestTemplate();
 
@@ -52,9 +52,9 @@ public class UserControllerMethods {
 
     }
 
-    public String userUpdate(User user) {
-
-        String uri = baseUrl +"updateuser/"+user.getUserName();
+    public String userUpdate(User user, Long userId) {
+        user.setPassword(new Md5PasswordEncoder().encodePassword(user.getPassword(), null));
+        String uri = baseUrl +"updateuser/" + userId;
         String result = rest.postForObject(uri, user, String.class);
         return result;
     }
