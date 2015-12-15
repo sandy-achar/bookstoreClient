@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcd399b3-c2e9-4fa0-bd72-1e5874043e04" name="Register User using form" comment="Added ajax call to display book details">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/challengers/BookstoreClientApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/challengers/BookstoreClientApplication.java" />
-    </list>
+    <list default="true" id="bcd399b3-c2e9-4fa0-bd72-1e5874043e04" name="Register User using form" comment="Added ajax call to display book details" />
     <list id="f242bc55-7363-4ead-bdaf-11f5fb94f9f0" name="updateUser" comment="" />
     <ignored path="bookstoreClient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,7 +125,7 @@
       <file leaf-file-name="BookstoreClientApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/challengers/BookstoreClientApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64955753">
+            <state vertical-scroll-proportion="-2.8230088">
               <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
               <folding />
             </state>
@@ -678,7 +676,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1161,7 +1159,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/challengers/BookstoreClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64955753">
+        <state vertical-scroll-proportion="-2.8230088">
           <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
           <folding />
         </state>
