@@ -37,11 +37,11 @@
 
     <div id="templatemo_content">
         <div id="templatemo_content_right" style="margin-right: 7em;">
-            <form method="get" action="/books">
+            <form action="#" method="get" th:action="@{/books}" th:object="${bookSearch}" >
                 <div class="col-lg-6" style="width:100%">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <select style="margin-right: 0px; height:34px" class="btn btn-default" id="category" name="category" th:value="${category}">
+                            <select style="margin-right: 0px; height:34px" class="btn btn-default" id="category" name="category" th:field="*{category}">
                                 <option value="title">Book Name</option>
                                 <option value="author">Author Name</option>
                                 <option value="publisher">Publisher Name</option>
@@ -50,7 +50,7 @@
                             </select>
                         </div>
                         <!-- /btn-group -->
-                        <input id="query" name="query" type="text" class="form-control" aria-label="..." th:value="${query}"/>
+                        <input id="query" name="query" type="text" class="form-control" aria-label="..." th:field="*{query}"/>
                         <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">Go!</button>
                         </span>

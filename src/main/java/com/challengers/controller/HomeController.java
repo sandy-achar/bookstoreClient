@@ -3,6 +3,7 @@ package com.challengers.controller;
 import com.challengers.Book;
 import com.challengers.BookControllerMethods;
 import com.challengers.User;
+import com.challengers.dto.BookSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,7 @@ public class HomeController {
                 .filter(book -> book.getQuantity() > book.getSold())
                 .collect(Collectors.toList());
         model.addAttribute("books", filteredBooks);
+        model.addAttribute("bookSearch", new BookSearch());
         return "books";
     }
 
@@ -60,9 +62,7 @@ public class HomeController {
 
 
         model.addAttribute("books", filteredBooks);
-
-        model.addAttribute("category", category);
-        model.addAttribute("query", query);
+        model.addAttribute("bookSearch", new BookSearch(category, query));
         return "books";
     }
 
