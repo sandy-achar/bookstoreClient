@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Register User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link th:href="@{/css/templatemo_style.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <style>
+        .detail{
+        margin-left: 2em;
+        background-color:white;
+        width:80%;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--<p th:text="'Hello, ' + ${book.bookTitle} + '!'">Welcome </p>
+<p th:text="'Hello, ' + ${book.isbn} + '!'">Welcome </p>-->
+
+
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container" style="width:980px">
+    <div id="templatemo_menu">
+        <ul>
+            <li><a th:href="@{/books}">Home</a></li>
+            <li><a th:href="@{/profile}" class="current">Profile</a></li>
+            <li><a th:href="@{/contactus}">Contact</a></li>
+            <li title="Log Out">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" style="padding: 0 20px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; color: #969547; background-color: transparent; border:none">Log Out</button>
+                </form>
+            </li>
+        </ul>
+    </div> <!-- end of menu -->
+
+    <div id="templatemo_header">
+
+    </div> <!-- end of header -->
+
+    <div id="templatemo_content">
+
+
+        <div id="templatemo_content_right" style="margin-right: 7em;">
+            <div class="input-group">
+                    <span class="input-group-addon" id="userNameLabel">User Name</span>
+                    <p id="userName" class="form-control-static detail" th:text="${user.userName}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="firstNameLabel">First Name</span>
+                    <p id="firstName" class="form-control-static detail" th:text="${user.firstName}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="lastNameLabel">Last Name</span>
+                    <p id="lastName" class="form-control-static detail" th:text="${user.lastName}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="middleNameLabel">Middle Name</span>
+                    <p id="middleName" class="form-control-static detail" th:text="${user.middleName}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="emailLabel">Email</span>
+                    <p id="email" class="form-control-static detail" th:text="${user.email}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="streetLabel">Street</span>
+                    <p id="street" class="form-control-static detail" th:text="${user.street}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="cityLabel">City</span>
+                    <p id="city" class="form-control-static detail" th:text="${user.city}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="zipCodeLabel">Zip Code</span>
+                    <p id="zipCode" class="form-control-static detail" th:text="${user.zipCode}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="stateLabel">State</span>
+                    <p id="state" class="form-control-static detail" th:text="${user.state}"></p>
+                </div><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="countryLabel">Country</span>
+                    <p id="country" class="form-control-static detail" th:text="${user.country}"></p>
+                </div><br/>
+            <a th:href="@{/updateuser}"><button type="button" style="margin-left:17em" class="btn btn-default navbar-btn">Update</button></a>
+        </div> <!-- end of content right -->
+
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+        <a th:href="@{/books}">Home</a> | <a th:href="@{/profile}">Profile</a> | <a th:href="@{/contactus}">Contact</a><br/>
+        Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
+        <!-- Credit: www.templatemo.com -->	</div>
+    <!-- end of footer -->
+    <!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
+</body>
+</html>

@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class UserControllerMethods {
 
-    private String baseUrl = "https://localhost:8084/user/";
+    private String baseUrl = "http://localhost:8084/user/";
     //Attributes for this class
     RestTemplate rest = new RestTemplate();
 

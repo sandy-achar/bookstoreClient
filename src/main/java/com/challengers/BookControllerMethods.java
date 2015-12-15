@@ -19,7 +19,7 @@ public class BookControllerMethods {
     //Attributes for this class
     RestTemplate rest = new RestTemplate();
 
-    String baseUrl = "https://localhost:8084/book/";
+    String baseUrl = "http://localhost:8084/book/";
 
     //Class constructor
     public BookControllerMethods() {}
