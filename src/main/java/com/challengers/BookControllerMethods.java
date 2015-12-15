@@ -92,11 +92,10 @@ public class BookControllerMethods {
         }
     }*/
 
-    public void addBook(Book book) {
+    public String  addBook(Book book) {
 
         String uri = baseUrl + "addbook";
-        String result = rest.postForObject(uri, book, String.class);
-        System.out.println(result);
+        return rest.postForObject(uri, book, String.class);
 
     }
 

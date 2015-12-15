@@ -3,15 +3,15 @@ package com.challengers.controller;
 import com.challengers.Book;
 import com.challengers.BookControllerMethods;
 import com.challengers.User;
+import com.challengers.UserControllerMethods;
+import com.challengers.dto.BookDto;
 import com.challengers.dto.BookSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +27,15 @@ public class HomeController {
     @Autowired
     private BookControllerMethods bookControllerMethods;
 
+    @Autowired
+    private UserControllerMethods userControllerMethods;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model){
+    public String home(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model, Principal principal){
+
+        User user = userControllerMethods.userLogin(principal.getName());
+        String role = user.getRole();
+        model.addAttribute("role", role);
 
         List<Book> books = bookControllerMethods.getAllBooks();
         List<Book> filteredBooks = books.stream()
@@ -40,7 +47,10 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
-    public String books(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model){
+    public String books(@RequestParam(required = false) String category, @RequestParam(required = false) String query, Model model, Principal principal){
+        User user = userControllerMethods.userLogin(principal.getName());
+        String role = user.getRole();
+        model.addAttribute("role", role);
 
         List<Book> books = new ArrayList<>();
         if(category != null && query != null){
@@ -79,4 +89,5 @@ public class HomeController {
     Book getBook(@RequestParam String isbn) {
         return bookControllerMethods.getBookByISBN(isbn);
     }
+
 }

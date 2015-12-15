@@ -77,8 +77,13 @@
                     </div>
                     <!-- /input-group -->
                 </div>
+
                 <!-- /.col-lg-6 -->
             </form>
+            <br/><br/>
+            <div style="margin-top: 2em">
+                <p th:if="${role == 'Seller'}"><a th:href="@{/addbookform}"><button class="btn btn-default" id="addBook">Add New Book</button></a></p>
+            </div>
             <div class="templatemo_product_box"
                  style="margin-right:1em;margin-left:1em; margin-top:2em; height:21em" th:each="book : ${books}">
                 <h1 th:text="${book.bookTitle}"/>
