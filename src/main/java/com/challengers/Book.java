@@ -191,6 +191,9 @@ public class Book {
     public String getFormattedAuthors(){
         return String.join(", ", authorNames);
     }
+    public String getFormattedPublishers(){
+        return String.join(", ", publisherNames);
+    }
 
     public String getImage() {
         return image;

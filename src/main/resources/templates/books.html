@@ -11,6 +11,21 @@
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
     <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <script>
+        function showBookDetails(isbn){
+            var isbn = $(isbn).attr('isbn');
+            $('#infomodal').modal('show');
+            $.getJSON("/findbyisbn", {"isbn": isbn}, function(executionResult) {
+                $('#name').text('Title : ' + executionResult.bookTitle);
+                $('#author').text('Authors : ' + executionResult.formattedAuthors);
+                $('#publisher').text('Publishers : ' + executionResult.formattedPublishers);
+                $('#isbn').text('ISBN : ' + executionResult.isbn);
+                $('#price').text('Price : ' + executionResult.price);
+                $('#language').text('Language : ' + executionResult.language);
+                $('#publishedYear').text('Published Year : ' + executionResult.publishedYear);
+            });
+        }
+    </script>
 
 </head>
 <body>
@@ -23,7 +38,10 @@
             <li><a th:href="@{/contactus}">Contact</a></li>
             <li title="Log Out">
                 <form th:action="@{/logout}" method="post">
-                    <button type="submit" style="padding: 0 20px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; color: #969547; background-color: transparent; border:none">Log Out</button>
+                    <button type="submit"
+                            style="padding: 0 20px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; color: #969547; background-color: transparent; border:none">
+                        Log Out
+                    </button>
                 </form>
             </li>
         </ul>
@@ -37,11 +55,12 @@
 
     <div id="templatemo_content">
         <div id="templatemo_content_right" style="margin-right: 7em;">
-            <form action="#" method="get" th:action="@{/books}" th:object="${bookSearch}" >
+            <form action="#" method="get" th:action="@{/books}" th:object="${bookSearch}">
                 <div class="col-lg-6" style="width:100%">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <select style="margin-right: 0px; height:34px" class="btn btn-default" id="category" name="category" th:field="*{category}">
+                            <select style="margin-right: 0px; height:34px" class="btn btn-default" id="category"
+                                    name="category" th:field="*{category}">
                                 <option value="title">Book Name</option>
                                 <option value="author">Author Name</option>
                                 <option value="publisher">Publisher Name</option>
@@ -50,7 +69,8 @@
                             </select>
                         </div>
                         <!-- /btn-group -->
-                        <input id="query" name="query" type="text" class="form-control" aria-label="..." th:field="*{query}"/>
+                        <input id="query" name="query" type="text" class="form-control" aria-label="..."
+                               th:field="*{query}"/>
                         <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">Go!</button>
                         </span>
@@ -59,45 +79,70 @@
                 </div>
                 <!-- /.col-lg-6 -->
             </form>
-                <div class="templatemo_product_box"
-                     style="margin-right:1em;margin-left:1em; margin-top:2em; height:18em" th:each="book : ${books}">
-                    <h1 th:text="${book.bookTitle}"/>
+            <div class="templatemo_product_box"
+                 style="margin-right:1em;margin-left:1em; margin-top:2em; height:21em" th:each="book : ${books}">
+                <h1 th:text="${book.bookTitle}"/>
 
-                    <div style="float:left; width:25%">
-                        <img th:src="'images/' + ${book.image}" alt="image"/>
-                        <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
-                    </div>
-                    <div style="float:right; color:white; width:60%; margin-left:10%">
-                        <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
+                <div style="float:left; width:25%">
+                    <img th:src="'images/' + ${book.image}" alt="image"/>
+                    <!--<img src="images/templatemo_image_01.jpg" alt="image"/>-->
+                </div>
+                <div style="float:right; color:white; width:60%; margin-left:10%">
+                    <p th:text="'Authors : ' + ${book.formattedAuthors}"/>
 
-                        <p th:text="'ISBN : ' + ${book.isbn}"/>
+                    <p th:text="'ISBN : ' + ${book.isbn}"/>
 
-                        <h3 th:text="'Price : $' + ${book.price}"/>
+                    <h3 th:text="'Price : $' + ${book.price}"/>
 
-                        <div class="buy_now_button"><a href="subpage.html">Add to Cart</a></div>
-                    </div>
+                    <div class="buy_now_button"><a href="subpage.html">Add to Cart</a></div>
+                    <div class="detail_button"><a href="#" th:attr="isbn=${book.isbn}" onclick="showBookDetails(this)">Detail</a></div>
                 </div>
             </div>
-            <!-- end of content right -->
-
-            <div class="cleaner_with_height">&nbsp;</div>
         </div>
-        <!-- end of content -->
+        <!-- end of content right -->
 
-        <div id="templatemo_footer">
-
-            <a th:href="@{/books}">Home</a> | <a th:href="@{/profile}">Profile</a> | <a th:href="@{/contactus}">Contact</a><br/>
-            Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
-
-            <!-- Credit: www.templatemo.com -->    </div>
-        <!-- end of footer -->
-        <!--  Free CSS Template www.templatemo.com -->
+        <div class="cleaner_with_height">&nbsp;</div>
     </div>
-    <!-- end of container -->
-    <!-- templatemo 086 book store -->
-    <!--
-    Book Store Template
-    http://www.templatemo.com/preview/templatemo_086_book_store
-    -->
+    <!-- end of content -->
+
+    <div id="templatemo_footer">
+
+        <a th:href="@{/books}">Home</a> | <a th:href="@{/profile}">Profile</a> | <a
+            th:href="@{/contactus}">Contact</a><br/>
+        Copyright © 2015 <a href="#"><strong>The Challengers</strong></a>
+
+        <!-- Credit: www.templatemo.com -->    </div>
+    <!-- end of footer -->
+    <!--  Free CSS Template www.templatemo.com -->
+</div>
+
+<div class="modal fade" id="infomodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="infoheader" class="modal-title">Details</h4>
+            </div>
+            <div class="modal-body">
+                <p id="name" class="form-control-static detail"></p>
+                <p id="author" class="form-control-static detail"></p>
+                <p id="publisher" class="form-control-static detail"></p>
+                <p id="price" class="form-control-static detail"></p>
+                <p id="isbn" class="form-control-static detail"></p>
+                <p id="language" class="form-control-static detail"></p>
+                <p id="publishedYear" class="form-control-static detail"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of container -->
+<!-- templatemo 086 book store -->
+<!--
+Book Store Template
+http://www.templatemo.com/preview/templatemo_086_book_store
+-->
 </body>
 </html>
